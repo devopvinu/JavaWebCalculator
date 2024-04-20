@@ -8,11 +8,9 @@ WORKDIR /usr/local/tomcat
 COPY /target/webapp-0.1.war  /usr/local/tomcat/webapps/
 
 
-
-
 # Set the environment variables for Tomcat
-ENV CATALINA_HOME=/usr/local/tomcat
-ENV PATH=$PATH:$CATALINA_HOME/bin
+ENV CATALINA_HOME /usr/local/tomcat
+ENV PATH $CATALINA_HOME/bin:$PATH
 
 # Expose the port that Tomcat will listen on
 EXPOSE 8080
