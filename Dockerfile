@@ -1,11 +1,13 @@
 FROM openjdk:8-jdk-alpine
 
-# Copy the WAR file to the Tomcat webapps directory
-COPY ./var/lib/jenkins/workspace/dev-env/target/webapp-0.1.war  /usr/local/tomcat/webapps/
-
 
 # Set the working directory
 WORKDIR /usr/local/tomcat
+
+# Copy the WAR file to the Tomcat webapps directory
+#COPY ./var/lib/jenkins/workspace/dev-env/target/webapp-0.1.war  /usr/local/tomcat/webapps/
+
+RUN cd /var/lib/jenkins/workspace/dev-env/target && cp webapp-0.1.war /usr/local/tomcat/webapps/
 
 
 
